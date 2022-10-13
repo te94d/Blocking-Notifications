@@ -1,10 +1,12 @@
 {
   "name": "Blocking phishing sites",
-  "description" : "Control method for web push notification by browser extension",
+  "description": "Control method for web push notification by browser extension",
   "version": "1.0",
   "manifest_version": 3,
-  "action": {
-    "default_popup": ".html",
-    "default_icon": ".png"
-  }
+  "background": {
+    "service_worker": "/js/event.js"
+  },
+  "permissions":[
+    "contextMenus"
+  ]
 }
