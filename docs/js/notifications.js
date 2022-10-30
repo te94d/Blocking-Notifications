@@ -1,36 +1,33 @@
 (function () {
   let supportsNotification = ("Notification" in window);
 
-  const notify = function () {
-    const title = "Hi there";
-    const body = "通知のテストです。";
-    const icon = "assets/notifications.png";
-    new Notification(title, { body: body, icon: icon });
-  };
+  function showNotification() {
+    const notify = new Notification("Hi there", {
+      body: "通知のテストです。",
+      icon: "assets/notifications.png"
+    });
+
+    notify.onclick = (e) => {
+      //window.location.href = "https://github.com/te94d/Blocking-Notifications"; //ページをリダイレクトさせる
+      window.open('https://github.com/te94d/Blocking-Notifications', '_blank');   //別タブで開く
+    };
+  }
+
   const notification = function () {
     if (!supportsNotification) { // 未サポート
       alert("Notifications API がサポートされていません。")
     }
     else if (Notification.permission === "granted") { // 許可
-      notify();
+      showNotification();
     }
     else if (Notification.permission !== "denied") { // 無視
       Notification.requestPermission(function (permission) { // 再確認
         if (permission === "granted") { // 許可
-          notify();
+          showNotification();
         }
       });
     }
   }
-
-  /*
-  notification.onclick = (event) => {
-    event.preventDefault(); // prevent the browser from focusing the Notification's tab
-    window.open('https://github.com/te94d', '_blank');
-  }
- 
-  //onclick = (event) => { };
-  */
 
   document.addEventListener("click", function (e) {
     if (e.target.id == "notification") {
