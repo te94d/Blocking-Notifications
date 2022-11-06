@@ -4,9 +4,16 @@
   "version": "1.0",
   "manifest_version": 3,
   "background": {
-    "service_worker": "/js/event.js"
+    "service_worker": "/js/blocking.js"
   },
-  "permissions":[
-    "contextMenus"
-  ]
+  "declarative_net_request": {
+    "rule_resources": [
+      {
+        "id": "ruleset_1",
+        "enabled": true,
+        "path": "/js/rules.json"
+      }
+    ]
+  },
+  "permissions": ["declarativeNetRequest", "alarms"]
 }
