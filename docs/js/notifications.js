@@ -1,15 +1,17 @@
 (function () {
   let supportsNotification = ("Notification" in window);
 
+  const title = "Hi there Hi there";
+
   function showNotification() {
-    const notify = new Notification("Hi there", {
+    const notify = new Notification(title, {
       body: "通知のテストです。",
       icon: "assets/notifications.png"
     });
 
     notify.onclick = (e) => {
-      //window.location.href = "https://github.com/te94d/Blocking-Notifications"; //ページをリダイレクトさせる
-      window.open('https://github.com/te94d/Blocking-Notifications', '_blank');   //別タブで開く
+      //window.location.href = "https://github.com/"; //ページをリダイレクトさせる
+      window.open('https://github.com/', '_blank');   //別タブで開く
     };
   }
 

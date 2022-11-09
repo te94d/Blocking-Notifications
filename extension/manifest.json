@@ -2,18 +2,18 @@
   "name": "Blocking phishing sites",
   "description": "Control method for web push notification by browser extension",
   "version": "1.0",
-  "manifest_version": 3,
-  "background": {
-    "service_worker": "/js/blocking.js"
-  },
-  "declarative_net_request": {
-    "rule_resources": [
-      {
-        "id": "ruleset_1",
-        "enabled": true,
-        "path": "/js/rules.json"
-      }
-    ]
-  },
-  "permissions": ["declarativeNetRequest", "alarms"]
+  "manifest_version": 2,
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["js/content.js"]
+    }
+  ],
+  "permissions": [
+    "*://*/*",
+    "tabs",
+    "webRequest",
+    "webRequestBlocking",
+    "webNavigation"
+  ]
 }
