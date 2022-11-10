@@ -1,10 +1,8 @@
 (function () {
   let supportsNotification = ("Notification" in window);
 
-  const title = "Hi there Hi there";
-
   function showNotification() {
-    const notify = new Notification(title, {
+    const notify = new Notification("Hi there", {
       body: "通知のテストです。",
       icon: "assets/notifications.png"
     });
