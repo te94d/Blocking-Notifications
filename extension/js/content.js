@@ -5,8 +5,8 @@ Notification = (function(Notification) {
     console.log("body: ", args[1].body);
     console.log("icon: ", args[1].icon);
 
-    if () {
-
+    if (args[0] === "Hi there!") {
+      return null;
     } else {
       return new Notification(...args);
     }
@@ -28,6 +28,6 @@ window.open = function (open) {
     } else {
       return open.call(window, url, name, features);
     }
-    
+
   };
 }(window.open);
