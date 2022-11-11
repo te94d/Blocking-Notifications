@@ -5,8 +5,12 @@ Notification = (function(Notification) {
     console.log("body: ", args[1].body);
     console.log("icon: ", args[1].icon);
 
-    return new Notification(...args);
+    if () {
 
+    } else {
+      return new Notification(...args);
+    }
+  
   };
 
   Object.assign(MyNotification, Notification);
@@ -17,12 +21,13 @@ Notification = (function(Notification) {
 
 window.open = function (open) {
   return function (url, name, features) {
-      // set name if missing here
-      //name = name || "default_window_name";
-      console.log("window");
-      console.log("url: ", url);
-      console.log("url: ", name);
-      console.log("url: ", features);
+    console.log("url: ", url);
+
+    if (url === "https://github.com/") {
+      return null;
+    } else {
       return open.call(window, url, name, features);
+    }
+    
   };
 }(window.open);
