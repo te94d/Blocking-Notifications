@@ -1,5 +1,4 @@
 Notification = (function(Notification) {
-
   function MyNotification(...args) {
     console.log("title: ", args[0]);
     console.log("body: ", args[1].body);
@@ -12,10 +11,8 @@ Notification = (function(Notification) {
     }
   
   };
-
   Object.assign(MyNotification, Notification);
   MyNotification.prototype = Notification.prototype;
-
   return MyNotification;
 })(Notification);
 
