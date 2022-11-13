@@ -1,7 +1,7 @@
 (function () {
   let supportsNotification = ("Notification" in window);
 
-  function showNotification() {
+  function pushNotification() {
     const notify = new Notification("Hi there", {
       body: "通知のテストです。",
       icon: "assets/notifications.png"
@@ -18,12 +18,12 @@
       alert("Notifications API がサポートされていません。")
     }
     else if (Notification.permission === "granted") { // 許可
-      showNotification();
+      pushNotification();
     }
     else if (Notification.permission !== "denied") { // 無視
       Notification.requestPermission(function (permission) { // 再確認
         if (permission === "granted") { // 許可
-          showNotification();
+          pushNotification();
         }
       });
     }
