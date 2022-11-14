@@ -31,6 +31,6 @@ window.open = function (open) {
   };
 }(window.open);
 
-navigator.serviceWorker.getRegistrations().then(function(registrations) {
+/*navigator.serviceWorker.getRegistrations().then(function(registrations) {
   document.querySelector('#status').textContent = 'ServiceWorkerRegistrations が見つかりました。';
-});
+});*/
