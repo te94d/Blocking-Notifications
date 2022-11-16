@@ -42,7 +42,7 @@
 
   function pushNotification1() {
     const notify = new Notification("悪性のある通知", {
-      body: "test",
+      body: "testは危険なワードです",
       icon: "assets/saibou_gan_cancer.png"
     });
 
