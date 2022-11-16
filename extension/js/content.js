@@ -2,13 +2,18 @@ Notification = (function(Notification) {
   function MyNotification(...args) {
     console.log("title: ", args[0]);
     console.log("body: ", args[1].body);
-    console.log("icon: ", args[1].icon);
+    console.log(" blocked_json.keyword :", blocked_json.keyword);
 
-    if (args[0] === "ブラックリストのキーワード") {
-      console.log("keyword blocked!");
-      return null;
-    } else {
-      return new Notification(...args);
+    for (let i = 0; i < blocked_json.keyword.length; i++) {
+      if (args[0] === blocked_json.keyword[i]) {
+        console.log("title - keyword blocked!");
+        return null;
+      } else if (args[1].body === blocked_json.keyword[i]) {
+        console.log("body - keyword blocked!");
+        return null;
+      } else {
+        return new Notification(...args);
+      }
     }
   
   };
@@ -20,17 +25,16 @@ Notification = (function(Notification) {
 window.open = function (open) {
   return function (url, name, features) {
     console.log("url: ", url);
+    console.log(" blocked_json.url :", blocked_json.url);
 
-    if (url === "ブラックリストのURL") {
-      console.log("url blocked!");
-      return null;
-    } else {
-      return open.call(window, url, name, features);
+    for (let j = 0; j < blocked_json.url.length; j++) {
+      if (url === blocked_json.url[j]) {
+        console.log("url blocked!");
+        return null;
+      } else {
+        return open.call(window, url, name, features);
+      }
     }
 
   };
 }(window.open);
-
-/*navigator.serviceWorker.getRegistrations().then(function(registrations) {
-  document.querySelector('#status').textContent = 'ServiceWorkerRegistrations が見つかりました。';
-});*/
