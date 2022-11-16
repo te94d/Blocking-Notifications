@@ -3,7 +3,13 @@
   "description": "Control method for web push notification by browser extension",
   "version": "1.0",
   "manifest_version": 2,
-  "web_accessible_resources": ["js/content.js"],
+  "icons": {
+    "128": "assets/tenshi_akuma_man.png"
+},
+  "web_accessible_resources": [
+    "js/content.js",
+    "js/blocked.json"
+  ],
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
