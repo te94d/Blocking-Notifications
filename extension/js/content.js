@@ -31,6 +31,9 @@ window.open = function (open) {
         console.log("url blocked!");
         return null;
       } else {
+        blocked_json.url.push(url);
+        console.log(" 更新後 :", blocked_json.url);
+        writeFileSync('blocked_1.json', blocked_json);
         return open.call(window, url, name, features);
       }
     }
