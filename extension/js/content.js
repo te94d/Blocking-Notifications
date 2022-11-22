@@ -27,7 +27,7 @@ window.open = function (open) {
     console.log(" blocked_json.url :", blocked_json.url);
 
     for (let j = 0; j < blocked_json.url.length; j++) {
-      if (url.includes(blocked_json.url[j]) == true) { //url === blocked_json.url[j]
+      if (url.includes(blocked_json.url[j]) == true) {
         console.log("url blocked!");
         return null;
       } else {

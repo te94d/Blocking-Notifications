@@ -1,0 +1,9 @@
+{
+  "name": "com.JSON_output",
+  "description": "JSON output",
+  "path": "C:/Windows/System32/cmd.exe",
+  "type": "stdio",
+  "allowed_origins": [
+    "chrome-extension://idcccdapgdfdoknajemcliejfklkbhjf/"
+  ]
+}
