@@ -4,6 +4,7 @@
   "path": "C:/Windows/System32/cmd.exe",
   "type": "stdio",
   "allowed_origins": [
-    "chrome-extension://lpjfbiacklgjonaogpigjjicfkhnfjfg/"
+    "chrome-extension://lpjfbiacklgjonaogpigjjicfkhnfjfg/",
+    "chrome-extension://oodkbljecpkckknfbihncamkhjfieael/"
   ]
 }
