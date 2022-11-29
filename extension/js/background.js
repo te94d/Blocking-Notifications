@@ -23,7 +23,7 @@ chrome.runtime.onMessage.addListener(
 				if (result == 0 ) {
 					console.log("登録されていない");
 					//ブラックリストに登録する処理
-
+					
 
 				} else {
 					result = 0;
