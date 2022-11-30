@@ -17,3 +17,13 @@ console.log("-- inject script --");
 const script = document.createElement("script");
 script.src = chrome.runtime.getURL("js/content.js");
 (document.head || document.documentElement).insertAdjacentElement("afterbegin", script);
+
+// URLを取得してbackground.jsに送る
+chrome.runtime.sendMessage({
+  url: location.href
+});
+
+// popup.htmlのinput要素に書いたテキストを取得
+chrome.runtime.onMessage.addListener(function(msg, sender, sendResponse) {
+alert(msg.send);//送られたテキストをアラートで表示
+});
