@@ -11,6 +11,7 @@ fetch(s.jsonUrl)
     console.log(s.textContent);
     (document.head || document.documentElement).insertAdjacentElement("afterbegin", s);
   });*/
+  
 // URLを取得してbackground.jsに送る
 chrome.runtime.sendMessage({
   flag: "getJson",
