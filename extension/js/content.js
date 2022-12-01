@@ -11,7 +11,7 @@ Notification = (function(Notification) {
       } else if (args[1].body.includes(blocked_json.keyword[i]) == true) {
         console.log("body - keyword blocked!");
         return null;
-      } else {
+      } else if(i+1 == blocked_json.keyword.length) {
         return new Notification(...args);
       }
     }
@@ -30,7 +30,7 @@ window.open = function (open) {
       if (url.includes(blocked_json.url[j]) == true) {
         console.log("url blocked!");
         return null;
-      } else {
+      } else if(j+1 == blocked_json.url.length) {
         return open.call(window, url, name, features);
       }
     }
