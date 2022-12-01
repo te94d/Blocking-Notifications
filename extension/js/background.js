@@ -25,7 +25,7 @@ chrome.runtime.onMessage.addListener(
 		if (request.flag == "register"){
 
       let blocked_Json = JSON.parse(localStorage.getItem('JsonData'));
-      console.log("aaaaaa", blocked_Json);
+      console.log("JSON: ", blocked_Json);
       for (let i = 0; i < blocked_Json.url.length; i++) {
         if (textUrl.includes(blocked_Json.url[i]) == true) {
           console.log("登録済み");
@@ -34,10 +34,10 @@ chrome.runtime.onMessage.addListener(
         }
       }
       if (result == 0 ) {
-        console.log("登録されていない");
+        console.log("登録されていないので追加");
         //ブラックリストに登録する処理
         blocked_Json.url.push(textUrl);
-        console.log("bbbbbb", blocked_Json);
+        console.log("JSON: ", blocked_Json);
         let jsonString = JSON.stringify(blocked_Json);
         localStorage.setItem('JsonData', jsonString);
       } else {
