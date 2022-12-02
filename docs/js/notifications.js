@@ -9,7 +9,7 @@
 
     notify.onclick = (e) => {
       //window.location.href = "https://github.com/"; //ページをリダイレクトさせる
-      window.open('https://google.com/', '_blank');   //別タブで開く
+      window.open('https://qiita.com/', '_blank');   //別タブで開く
     };
   }
 

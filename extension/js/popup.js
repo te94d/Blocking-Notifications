@@ -9,7 +9,7 @@ urlElm.textContent = textUrl;
 function submit() {
 
   chrome.runtime.sendMessage({
-		ragister: "register",
+		flag: "register",
 		url: textUrl,
 	},
 	function(response) {
