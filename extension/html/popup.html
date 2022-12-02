@@ -12,15 +12,27 @@
         word-wrap: break-word;
       }
       #submit {
-        margin: 1em 75px;
-        width: 50px;
+        margin: 1.5em 70px 1em;
+        padding: 5px 15px;
+        border-radius: 4px;
+        font-weight: bold;
+        width: 60px;
+      }
+      .btn {
+        color: #fff;
+        background-color: #006eeb;
+        border: none;
+      }
+      .btn:hover {
+        color: #fff;
+        background: #005bc4;
       }
     </style>
   </head>
   <body>
     <div><p>現在アクセスしているサイトを<br>ブラックリストに登録しますか？</p></div>
     <div id="textUrl" class="box"></div>
-    <button id="submit">登録</button>
+    <button id="submit" class="btn">登録</button>
     <script src="../js/popup.js"></script>
   </body>
 </html>
