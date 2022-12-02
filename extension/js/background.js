@@ -47,6 +47,7 @@ chrome.runtime.onMessage.addListener(
 			sendResponse({
 				res: "0"
 			});
+      
 			/*if (result == 1) {
 				console.log("登録済み: ", result);
 				sendResponse({
