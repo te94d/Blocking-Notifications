@@ -4,17 +4,13 @@ chrome.runtime.sendMessage({
   url: location.href,
 },
 function(response){
-  if (response.res == 0) {
-    console.log("anser 0");
-  }else if(response.res == 1) {
-    console.log("anser 1");
-    console.log("anser json: ", response.json);
+  if(response.res == 1) {
+    console.log("jsonの中身: ", response.json);
     let jsonString = JSON.stringify(response.json);
 
     console.log("-- load json --");
     const s = document.createElement("script");
     s.textContent = "const blocked_json = " + jsonString + ";";
-    console.log("jsonなかみ: ",s.textContent);
     (document.head || document.documentElement).insertAdjacentElement("afterbegin", s);
 
     console.log("-- inject script --");
@@ -22,7 +18,7 @@ function(response){
     script.src = chrome.runtime.getURL("js/content.js");
     (document.head || document.documentElement).insertAdjacentElement("afterbegin", script);
   }else {
-    console.log("error");
+    console.log("res=0 or error");
   }
 });
 
