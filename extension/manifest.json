@@ -1,7 +1,7 @@
 {
   "name": "Blocking phishing sites",
   "description": "Control method for web push notification by browser extension",
-  "version": "1.0",
+  "version": "1.5",
   "manifest_version": 2,
   "icons": {
     "128": "img/tenshi_akuma_man.png"
