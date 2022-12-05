@@ -10,7 +10,6 @@ fetch(jsonUrl)
   let jsonString = JSON.stringify(JsonData);
   localStorage.setItem('JsonData', jsonString);
 });
-// content_script.jsで取得したtitleタグとURLを取得して変数に代入
 chrome.runtime.onMessage.addListener(
   function (request, sender, sendResponse) {
     textUrl = request.url;
@@ -35,7 +34,6 @@ chrome.runtime.onMessage.addListener(
       }
       if (result == 0 ) {
         console.log("登録されていないので追加");
-        //ブラックリストに登録する処理
         blocked_Json.url.push(textUrl);
         console.log("JSON: ", blocked_Json);
         let jsonString = JSON.stringify(blocked_Json);
