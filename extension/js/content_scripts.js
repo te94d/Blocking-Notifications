@@ -15,7 +15,7 @@ function(response){
 
     console.log("-- inject script --");
     const script = document.createElement("script");
-    script.src = chrome.runtime.getURL("js/content.js");
+    script.src = chrome.runtime.getURL("js/collation.js");
     (document.head || document.documentElement).insertAdjacentElement("afterbegin", script);
   }else {
     console.log("res=0 or error");
