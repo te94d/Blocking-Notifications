@@ -7,14 +7,14 @@
     "128": "img/tenshi_akuma_man.png"
 },
   "web_accessible_resources": [
-    "js/content.js",
+    "js/collation.js",
     "js/blocked.json"
   ],
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
       "run_at": "document_start",
-      "js": ["js/inject.js"]
+      "js": ["js/content_scripts.js"]
     }
   ],
   "background": {
