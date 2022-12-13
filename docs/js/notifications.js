@@ -4,7 +4,7 @@
   function pushNotification0() {
     const notify = new Notification("悪性のない通知", {
       body: "通知のテストです。",
-      icon: "assets/notifications.png"
+      icon: "assets/fish_fugu_haku.png"
     });
 
     notify.onclick = (e) => {
