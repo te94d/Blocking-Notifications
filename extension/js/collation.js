@@ -7,10 +7,16 @@ Notification = (function(Notification) {
     for (let i = 0; i < blocked_json.keyword.length; i++) {
       if (args[0].includes(blocked_json.keyword[i]) == true) {
         console.log("title - keyword blocked!");
-        return null;
+        args[0] = "プッシュ通知をブロック";
+        args[1].body = "悪質なキーワードを検出したので表示をブロックします。";
+        args[1].icon = "";
+        return new Notification(...args);
       } else if (args[1].body.includes(blocked_json.keyword[i]) == true) {
         console.log("body - keyword blocked!");
-        return null;
+        args[0] = "プッシュ通知をブロック";
+        args[1].body = "悪質なキーワードを検出したので表示をブロックします。";
+        args[1].icon = "";
+        return new Notification(...args);
       } else if(i+1 == blocked_json.keyword.length) {
         return new Notification(...args);
       }
@@ -29,6 +35,9 @@ window.open = function (open) {
     for (let j = 0; j < blocked_json.url.length; j++) {
       if (url.includes(blocked_json.url[j]) == true) {
         console.log("url blocked!");
+        new Notification("プッシュ通知をブロック", {
+          body: "悪質なURLを検出したので遷移をブロックします。",
+        });
         return null;
       } else if(j+1 == blocked_json.url.length) {
         return open.call(window, url, name, features);
